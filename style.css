@@ -125,6 +125,10 @@ h1 {
   color: #a8a29e;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .fact-form span {
   font-weight: 600;
   font-size: 18px;
