@@ -49,6 +49,7 @@ h1 {
 }
 
 .fact {
+  border-radius: 16px;
   font-size: 20px;
   margin-bottom: 16px;
   line-height: 1.4;
@@ -67,6 +68,26 @@ h1 {
 
 .vote-buttons {
   margin-left: auto;
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.vote-buttons button {
+  border: none;
+  background-color: #78716c;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: inherit;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vote-buttons button:hover {
+  background-color: #292524;
 }
 
 .btn:hover {
@@ -74,10 +95,40 @@ h1 {
 }
 
 .fact-form {
+  border-radius: 16px;
   background-color: #44403c;
   margin-bottom: 40px;
-  padding: 16px 40px;
-  text-align: center;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+
+.fact-form input,
+.fact-form select {
+  width: 220px;
+  background-color: #78716c;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  color: inherit;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.fact-form input:first-child {
+  flex-grow: 1;
+}
+
+.fact-form input::placeholder {
+  color: #a8a29e;
+}
+
+.fact-form span {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 18px;
 }
 
 .tag {
@@ -87,6 +138,8 @@ h1 {
   padding-top: 3px;
   padding-left: 10px;
   padding-right: 10px;
+  cursor: pointer;
+  border-radius: 50px;
 }
 
 .source:link,
@@ -108,6 +161,7 @@ ul {
 
 .btn {
   border: none;
+  cursor: pointer;
   font-family: "Coiny", sans-serif;
   line-height: 1;
   text-transform: uppercase;
@@ -116,6 +170,7 @@ ul {
   background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
   color: inherit;
   transition: 0.3s;
+  border-radius: 50px;
 }
 
 .btn-large {
@@ -131,4 +186,33 @@ ul {
 .btn-category {
   width: 100%;
   background-image: none;
+}
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+  }
+
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
 }
